@@ -1,12 +1,37 @@
-<script setup lang="ts">
 
-</script>
 
 <template>
-  <h1>부장님 공간</h1>
-  <h2>테스트</h2>
+  <div class="d">
+    {{ test.name }}
+    {{ test.job }}
+    {{ test.home }}
+  </div>
+
+  <div class="dom">
+    {{ test.name }} {{ test.job }} {{ test.home }}
+  </div>
+
+  <hr>
+
+  <Checkbox name="test" inputId="ch1" label="label" />
+
+
+
+
 </template>
 
 <style scoped>
 
 </style>
+
+<script setup lang="ts">
+
+  import Checkbox from "@/cps/checkbox.vue";
+
+  let test = {
+    name: '김재섭',
+    job: '퍼블',
+    home: '없음'
+  }
+
+</script>
