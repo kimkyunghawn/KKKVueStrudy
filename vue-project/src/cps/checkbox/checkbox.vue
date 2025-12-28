@@ -1,5 +1,7 @@
 <template>
-  <div class="chk_box">
+  <!-- <div class="chk_box"> -->
+  <!-- 컴포넌트 style 호출 방법 -->
+  <div :class="$style.chk_box">
     <input type="checkbox" :name="inputName" v-bind:id="inputId">
     <label :for="inputId">
       <span class="text">{{ label }}</span>
@@ -17,11 +19,10 @@
 </script>
 
 
-<!-- <style module lang="scss">
-@use "/vue-project/src/assets/css/cp/checkbox.scss";
-</style> -->
+<style module lang="scss">
+  @use "./checkbox.module.scss"
+</style>
 
 <style lang="scss" scoped>
-
 </style>
 

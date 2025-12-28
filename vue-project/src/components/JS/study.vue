@@ -24,7 +24,9 @@
 
   <hr>
 
-  <Checkbox inputName="test" inputId="ch1" label="label" />
+  <Checkbox inputName="test" inputId="ch1" label="약관에 동의하시겠습니까?" />
+  <Checkbox inputName="test" inputId="ch2" label="label" />
+  <Checkbox inputName="test" inputId="ch3" label="label" />
 
   <hr>
 
@@ -47,7 +49,7 @@
 
 <script setup lang="ts">
 
-  import Checkbox from "@/cps/checkbox.vue";
+  import Checkbox from "@/cps/checkbox/checkbox.vue";
   import Radio from "@/cps/radio.vue";
 
   let test = {
