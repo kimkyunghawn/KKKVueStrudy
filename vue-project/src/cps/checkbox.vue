@@ -16,6 +16,11 @@
 
 </script>
 
+
+<!-- <style module lang="scss">
+@use "/vue-project/src/assets/css/cp/checkbox.scss";
+</style> -->
+
 <style lang="scss" scoped>
 
 </style>

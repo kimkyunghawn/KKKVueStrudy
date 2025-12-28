@@ -2,7 +2,7 @@
 
 <template>
 
-  <ul class="sub_link">
+  <ul class="link_list">
     <li>
       <RouterLink to="/JsStudy/Chkbox">checkbox 모음</RouterLink>
     </li>
@@ -38,6 +38,10 @@
 </template>
 
 <style scoped>
+
+  .link_list {
+    
+  }
 
 </style>
 

@@ -45,3 +45,8 @@ let test = {
 
 만드는 김에 명함 같으모양으로??!
 
+
+------------------------------------------
+sass 적용 시 
+npm install sass sass-loader --save-dev
+추가 필요
