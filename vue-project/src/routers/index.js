@@ -15,16 +15,14 @@ const routes = [
     path: "/JsStudy",  // TestComponent.vue로 이동할 Path
     name: "JsStudy",  // router name
     component: JsStudyComponent,  // Path로 이동될 Component
-    children: [
-      {
-        path: "Chkbox",
-        component: Ccs,
-      },
-      {
-        path: "Rbox",
-        component: Rcs,
-      },
-    ]
+  },
+  {
+    path: "/JsStudy/Chkbox",
+    component: Ccs,
+  },
+  {
+    path: "/JsStudy/Rbox",
+    component: Rcs,
   },
   {
     path: "/MnStudy",  // TestComponent.vue로 이동할 Path
