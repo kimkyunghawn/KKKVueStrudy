@@ -7,7 +7,7 @@
       <RouterLink to="/JsStudy/Chkbox">checkbox 모음</RouterLink>
     </li>
     <li>
-      <RouterLink to="/JsStudy/Radio">radio 모음</RouterLink>
+      <RouterLink to="/JsStudy/Rbox">radio 모음</RouterLink>
     </li>
   </ul>
 
@@ -31,7 +31,7 @@
   <Radio rName="r1" rId="id" label="radio" />
 
 
-
+  <RouterView />
 
 
 
