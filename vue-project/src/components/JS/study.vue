@@ -1,6 +1,17 @@
 
 
 <template>
+
+  <ul class="sub_link">
+    <li>
+      <RouterLink to="/JsStudy/Chkbox">checkbox 모음</RouterLink>
+    </li>
+    <li>
+      <RouterLink to="/JsStudy/Radio">radio 모음</RouterLink>
+    </li>
+  </ul>
+
+
   <div class="d">
     {{ test.name }}
     {{ test.job }}
@@ -13,7 +24,13 @@
 
   <hr>
 
-  <Checkbox name="test" inputId="ch1" label="label" />
+  <Checkbox inputName="test" inputId="ch1" label="label" />
+
+  <hr>
+
+  <Radio rName="r1" rId="id" label="radio" />
+
+
 
 
 
@@ -27,6 +44,7 @@
 <script setup lang="ts">
 
   import Checkbox from "@/cps/checkbox.vue";
+  import Radio from "@/cps/radio.vue";
 
   let test = {
     name: '김재섭',

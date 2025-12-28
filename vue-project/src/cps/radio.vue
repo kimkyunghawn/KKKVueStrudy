@@ -1,7 +1,7 @@
 <template>
-  <div class="chk_box">
-    <input type="checkbox" :name="inputName" v-bind:id="inputId">
-    <label :for="inputId">
+  <div class="radio_box">
+    <input type="radio" :name="rName" :id="rId">
+    <label :for="rId">
       <span class="text">{{ label }}</span>
     </label>
   </div>
@@ -9,8 +9,8 @@
 
 <script setup lang="ts">
   defineProps <{
-    inputName?: string,
-    inputId?: string,
+    rName?: string,
+    rId?: string,
     label?: string,
   }>();
 
