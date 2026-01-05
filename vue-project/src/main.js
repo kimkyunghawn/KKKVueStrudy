@@ -4,6 +4,7 @@ import routers from './routers'  // router import
 
 // css
 import "@/assets/css/reset.scss"
+import "@/assets/css/global.scss"
 
 //createApp(App).mount('#app')
 

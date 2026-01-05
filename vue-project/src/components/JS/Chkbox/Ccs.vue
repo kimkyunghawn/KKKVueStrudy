@@ -1,7 +1,8 @@
 <template>
-  <div>
-    여기는 checkbox components 모음
-  </div>
+  <h1>1</h1>
+  <h1>1</h1>
+  <h1>1</h1>
+  <h1>1</h1>
 </template>
 
 <script setup>
@@ -9,5 +10,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+  h1 {
+    // font-size: 24px;
+  }
 </style>

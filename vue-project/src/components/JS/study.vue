@@ -7,9 +7,22 @@
       <RouterLink to="/JsStudy/Chkbox">checkbox 모음</RouterLink>
     </li>
     <li>
-      <RouterLink to="/JsStudy/Rbox">radio 모음</RouterLink>
+      <RouterLink role="button" class="x2" to="/JsStudy/Rbox">radio 모음</RouterLink>
     </li>
   </ul>
+
+  <p>추후 router link 대체 vue 파일 / 모바일에서 웹/앱 접근성 시 a tag role button 처리를 위함</p>
+  <pre>
+    <template>
+      <RouterLink
+        :to="to"
+        role="button"
+        class="app-link"
+      >
+        <slot />
+      </RouterLink>
+    </template>
+  </pre>
 
 
   <div class="d">
@@ -30,7 +43,7 @@
 
   <hr>
 
-  <Radio rName="r1" rId="id" label="radio" />
+  <Radio rName="r1" rId="id" label="radio test" />
 
 
   <RouterView />
@@ -50,7 +63,7 @@
 <script setup lang="ts">
 
   import Checkbox from "@/cps/checkbox/checkbox.vue";
-  import Radio from "@/cps/radio.vue";
+  import Radio from "@/cps/radio/radio.vue";
 
   let test = {
     name: '김재섭',
