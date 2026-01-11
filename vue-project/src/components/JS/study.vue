@@ -24,6 +24,10 @@
     </template>
   </pre>
 
+  <div class="test_sticky">
+    sticky 영역
+  </div>
+
 
   <div class="d">
     {{ test.name }}
@@ -34,6 +38,8 @@
   <div class="dom">
     {{ test.name }} {{ test.job }} {{ test.home }}
   </div>
+
+  
 
   <hr>
 

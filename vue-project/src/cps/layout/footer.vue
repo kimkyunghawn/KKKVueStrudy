@@ -21,6 +21,7 @@
     justify-content: center;
     padding: 10px 0;
     border-top: 1px solid #000;
+    background-color: #ddd;
 
   }
 
