@@ -1,3 +1,49 @@
+/* default layout */
+#app {
+ height: 100%; 
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // background-color: blue;
+}
+
+
+/* header_wrap */
+.header_wrap {
+  flex: none;
+}
+/* header_wrap */
+
+/* main */
+.app {
+  & > main {
+    flex: 1 1 0;
+    overflow: auto;
+  }
+}
+/* main */
+
+
+/* footer_wrap */
+.footer_wrap {
+  flex: none;
+}
+/* footer_wrap */
+
+/* default layout */
+
+
+
+
+
+
+
+
+
+
+
 .link_list {
   padding: 8px 0;
   > li {
