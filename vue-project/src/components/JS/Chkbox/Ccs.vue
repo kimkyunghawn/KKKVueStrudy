@@ -4,20 +4,32 @@
 		<div class="guide_title">
 			checkbox event
 		</div>
+		
 
-		<Checkbox label="누르면 인풋이 나옵니다." />
+		<Checkbox inputId="test1" label="누르면 인풋이 나옵니다." :chkwrapper="['t1', 't2']" />
+		<Checkbox inputId="test2" label="누르면 인풋이 나옵니다." v-model="chked" />
+		<Checkbox inputId="test3" :label="`누르면 인풋이 나옵니다. ${chked}`" v-model="chked" />
+		<Checkbox inputId="test4" :label="'누르면 인풋이 나옵니다. ' + chked" v-model="chked" />
 
-		<p class="guide_text">
-			1. 체크박스 checked에 따라서 하단에 input text 컴포넌트가 노출여부 결정 <br>
-			1.1 노출되는 컴포넌트는 rounter-view? 로 해야하는지 확인 <br>
-			2. 노출된 input text에 문구를 입력하면 하단 p 태그에 해당 내용 노출
+		<p class="guide_title">
+			chked가 true 면 .dom가 활성화<br>
+			chked의 상태값은 [ <strong class="bold">{{ chked }}</strong> ] 입니다.
 		</p>
+		<br>
+		<div class="test_dom test_dom_ty1" v-if="chked">
+			<Input inpId="id1" maxlength="20" wrapperClass="test1" inpClass="inptest1 sdf" />
+			<Input inpId="id2" :inpClass="['t1', 't2']"/>
+			<Input inpId="id3" placeholder="x" :modelValue="dmpValue1" />
+			<Input inpId="id4" v-model="dmpValue1" />
+			<Input inpId="id4" v-model="dmpValue1" readonly />
+			<Input inpId="id5" maxlength="20" :modelValue="dmpValue1" disabled readonly  />
+		</div>
 
-		<Input maxlength="20" wrapperClass="test1" inpClass="inptest1 sdf" />
-		<Input :inpClass="['t1', 't2']"/>
-		<Input placeholder="x" :value="dmpValue1" />
-		<Input type="number" readonly />
-		<Input type="number" maxlength="20" disabled readonly  />
+		<br>
+
+		<p>
+			입력된 input의 값은 동적으로 <strong class="bold">{{ dmpValue1 }}</strong> 입니다.
+		</p>
 
 	</div>
 
@@ -27,14 +39,15 @@
 <script setup lang="ts">
   import Checkbox from "@/cps/checkbox/checkbox.vue"
 	import Input from "@/cps/input/input.vue"
-
 	import { ref } from "vue"
 
-	// let testData = {
-	// 	dmpValue1: '홍길동',
-	// }
+	const chked = ref(false);
+	const dmpValue1 = ref('홍길동1');
+	const dmpValue2 = ref('홍길동2');
+	const dmpValue3 = ref('홍길동3');
 
-	const dmpValue1 = '홍길동';
+
+	
 
 
 </script>

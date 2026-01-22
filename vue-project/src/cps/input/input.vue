@@ -1,13 +1,17 @@
 <template>
 	<div class="input" :class="wrapperClass">
 		<input class="inp"
+			:type="type"
+			:id="inpId"
 			:class="inpClass"
-			:type="type" 
+			:name="inpName"
 			:placeholder="placeholder"
 			v-bind="$attrs"
-			:value="value"
+			:value="modelValue"
 			:readonly="readonly" 
 			:disabled="disabled"
+			@input="onInput"
+			autocomplete="off"
 		/>
 	</div>
 </template>
@@ -26,9 +30,11 @@
 		// type?: string,
 		wrapperClass?: string | string[] | Record<string, boolean>,
 		inpClass?: string | string[] | Record<string, boolean>,
+		inpId?: string,
+		inpName?: string,
 		type?: 'text' | 'number' | 'password' | 'email' | 'tel' | 'url' | 'search' | 'date' | 'time' | 'file' | 'month' | 'week',
 		placeholder?: string,
-		value?: string | number,
+		modelValue?: string | number,
 		readonly?: boolean,
 		disabled?: boolean,
 	}
@@ -39,6 +45,22 @@
 		readonly: false,
 		disabled: false,
 	});
+
+	const emit = defineEmits<{
+		(e: 'update:modelValue', value: string | number): void
+	}>();
+
+	const onInput = (e: Event) => {
+		if (props.readonly || props.disabled) return
+
+		const target = e.target as HTMLInputElement
+		emit('update:modelValue', target.value)
+	}
+
+
+
+	
+
 </script>
 
 <!-- <script lang="ts">
@@ -58,7 +80,6 @@
 
 
 <style lang="scss">
-
 	.input {
 		input {
 			display: block;
@@ -72,6 +93,7 @@
 				background-color: #ddd;
 			}
 			&:disabled {
+				color: #ddd;
 				background-color: #333;
 			}
 		}

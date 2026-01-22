@@ -60,10 +60,6 @@
 
 <style scoped>
 
-  .link_list {
-    
-  }
-
 </style>
 
 <script setup lang="ts">

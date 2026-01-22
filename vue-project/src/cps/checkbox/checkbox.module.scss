@@ -1,6 +1,6 @@
 .chk_box {
-  margin: 20px 0;
   position: relative;
+  margin: 20px 0;
   > input {
     position: absolute;
     top: 0;
@@ -19,7 +19,6 @@
     display: block;
     padding-left: 30px;
     font-size: 16px;
-    // line-height: 20px;
     &::before {
       content: '';
       position: absolute;
