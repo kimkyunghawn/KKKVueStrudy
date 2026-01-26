@@ -4,7 +4,6 @@
 		<div class="guide_title">
 			checkbox event
 		</div>
-		
 
 		<Checkbox inputId="test1" label="누르면 인풋이 나옵니다." :chkwrapper="['t1', 't2']" />
 		<Checkbox inputId="test2" label="누르면 인풋이 나옵니다." v-model="chked" />
@@ -12,7 +11,7 @@
 		<Checkbox inputId="test4" :label="'누르면 인풋이 나옵니다. ' + chked" v-model="chked" />
 
 		<p class="guide_title">
-			chked가 true 면 .dom가 활성화<br>
+			chked가 true 면 .dom이 활성화<br>
 			chked의 상태값은 [ <strong class="bold">{{ chked }}</strong> ] 입니다.
 		</p>
 		<br>
