@@ -64,6 +64,12 @@
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
 }
+.guide_ele {
+	margin: 8px 0;
+	padding: 8px;
+	border: 1px solid #000;
+}
+
 /* guide tags */
 
 
@@ -72,7 +78,7 @@
   position: sticky;
   top: 0;
   text-align: center;
-  padding: 10px;
+  padding: 8px;
   background-color: red;
 }
 
@@ -91,6 +97,29 @@
       }
     }
   }
+}
+
+.m_list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px 0;
+	> li {
+		position: relative;
+		padding-left: 20px;
+		font-size: 16px;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 6px;
+			height: 6px;
+			background-color: #000;
+			transform: translateY(-50%);
+			border-radius: 50%;
+		}
+
+	}
 }
 
 .g_list	{

@@ -9,6 +9,9 @@
     <li>
       <RouterLink role="button" class="x2" to="/JsStudy/Rbox">radio 모음</RouterLink>
     </li>
+    <li>
+      <RouterLink role="button" class="x2" to="/JsStudy/Event">이벤트 - accordion</RouterLink>
+    </li>
   </ul>
 
   <p>추후 router link 대체 vue 파일 / 모바일에서 웹/앱 접근성 시 a tag role button 처리를 위함</p>
@@ -64,8 +67,9 @@
 
 <script setup lang="ts">
 
-  import Checkbox from "@/cps/checkbox/checkbox.vue";
-  import Radio from "@/cps/radio/radio.vue";
+  // import Checkbox from "@/cps/checkbox/checkbox.vue";
+  // import Radio from "@/cps/radio/radio.vue";
+	import { RouterLink, RouterView } from "vue-router";
 
   let test = {
     name: '김재섭',

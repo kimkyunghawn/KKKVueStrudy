@@ -3,6 +3,7 @@ import HelloWorld from "@/components/Home/HomeVue.vue";
 import JsStudyComponent from "@/components/JS/study.vue";
 import Ccs from "@/components/JS/Chkbox/Ccs.vue";
 import Rcs from "@/components/JS/Rbox/Rcs.vue";
+import Accordion from "@/components/JS/Event/Accordion.vue";
 import MnStudyComponent from "@/components/MN/study.vue";
 
 const routes = [
@@ -23,6 +24,10 @@ const routes = [
   {
     path: "/JsStudy/Rbox",
     component: Rcs,
+  },
+  {
+    path: "/JsStudy/Event",
+    component: Accordion,
   },
   {
     path: "/MnStudy",  // TestComponent.vue로 이동할 Path
