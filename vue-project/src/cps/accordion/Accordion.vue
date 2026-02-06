@@ -1,76 +1,57 @@
 <template>
-
-	<div class="acc_wrap" :class="toggleClasses">
+  <div class="acc_wrap" :class="{ is_open: isOpen }">
 		<div class="acc_h">
 			<div class="inner">
-				<button type="button" 
+				<button 
+					type="button"
+					:disabled="props.disabled"
 					class="op_toggle" 
-					:disabled="disabled"
-  				@click="toggleAccordion()"
-					:aria-expanded="props.modelValue"
+					@click="onToggle"
 				>
-				<slot name="title"></slot>
+					<slot name="title" />
 				</button>
 			</div>
 		</div>
-		<div class="acc_c" :style="{ height: contentHeight }">
-			<div class="inner" ref="contentEl">
-				<slot name="content"></slot>
-			</div>
-		</div>
-	</div>
 
+		
+    <div class="acc_c">
+			<div class="inner" v-show="isOpen">
+				<slot name="content" />
+			</div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { ref, watch, nextTick, computed } from 'vue'
+import { inject, computed, onMounted } from 'vue'
 
 const props = defineProps<{
-	// 열림/닫힘 상태
-  modelValue: boolean,
-	disabled?: boolean,
+  disabled?: boolean
 }>()
 
-const emit = defineEmits<{
-  (e: 'update:modelValue', value: boolean): void
-}>()
+const group = inject<{
+  openIndex: { value: number | null }
+  register: () => number
+  toggle: (index: number) => void
+}>('accordionGroup')
 
-const contentEl = ref<HTMLElement | null>(null)
-const contentHeight = ref('0px')
-
-const toggleAccordion = () => {
-	// 만약 disabled 상태면 토글 안함
-	if(props.disabled) return;
-	console.log('토글 클릭됨' + props.modelValue)
-  emit('update:modelValue', !props.modelValue)
+if (!group) {
+  throw new Error('Accordion must be used inside AccordionGroup')
 }
 
-const toggleClasses = computed(() => ({
-  is_open: props.modelValue,
-  is_close: !props.modelValue,
-}))
+let myIndex = -1
 
-/** 열림/닫힘 감시 */
-watch(
-  () => props.modelValue,
-  async (isOpen) => {
-    await nextTick()
+onMounted(() => {
+  myIndex = group.register()
+})
 
-    if (!contentEl.value) return
+const isOpen = computed(() => group.openIndex.value === myIndex)
 
-    if (isOpen) {
-      const height = contentEl.value.scrollHeight
-      contentHeight.value = `${height}px`
-    } else {
-      contentHeight.value = '0px'
-    }
-  },
-  { immediate: true }
-)
+const onToggle = () => {
+  if (props.disabled) return
+  group.toggle(myIndex)
+}
 </script>
-
-
-
 
 <style lang="scss">
 .acc_wrap {

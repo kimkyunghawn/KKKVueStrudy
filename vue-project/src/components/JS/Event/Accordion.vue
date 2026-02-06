@@ -3,7 +3,7 @@
 		여기는 Accordion 페이지
 	</h2>
 
-	<div class="accordion_group">
+	<AccordionGroup>
 		<Accordion v-model="isAccordionOpen1">
 			<template v-slot:title>
 				타이틀
@@ -29,14 +29,14 @@
 				</ul>
 			</template>
 		</Accordion>
-	</div>
+	</AccordionGroup>
 
 	
 
 </template>
-
 <script setup lang="ts">
 	import { ref } from 'vue'
+	import AccordionGroup from '@/cps/accordion/AccordionGroup.vue';
 	import Accordion from '@/cps/accordion/Accordion.vue';
 
 	const isAccordionOpen1 = ref(true) // ← 여기서 제어
